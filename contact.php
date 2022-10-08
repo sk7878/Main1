@@ -108,8 +108,8 @@
 								while(!feof($file)) {
 									$line = fgets($file);
 									# do same stuff with the $line
-									<a href="#" class="phone">$line </a>
-									#echo "$line";
+									#<a href="#" class="phone">$line </a>
+									echo "$line";
 								}
 								fclose($file);
 							}
