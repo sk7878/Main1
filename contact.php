@@ -107,9 +107,7 @@
 							if ($file = fopen("contact_info.txt", "r")) {
 								while(!feof($file)) {
 									$line = fgets($file);
-									# do same stuff with the $line
-									#<a href="#" class="phone">$line </a>
-									echo "$line";
+									<a href="#" class="phone">$line </a>
 								}
 								fclose($file);
 							}
