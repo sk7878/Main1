@@ -43,7 +43,7 @@
 							<li class="menu-item"><a href="news.html">News</a></li>
 							<li class="menu-item"><a href="about.html">About</a></li>
 							<li class="menu-item"><a href="project.html">our Projects</a></li>
-							<li class="menu-item current-menu-item"><a href="contact.html">Contact</a></li>
+							<li class="menu-item current-menu-item"><a href="contact.php">Contact</a></li>
 						</ul> <!-- .menu -->
 					</div> <!-- .main-navigation -->
 
@@ -104,12 +104,12 @@
 						</address>
 
 						<?php
-							if ($file = fopen("/text/contact_info.txt", "r")) {
+							if ($file = fopen("contact_info.txt", "r")) {
 								while(!feof($file)) {
 									$line = fgets($file);
 									# do same stuff with the $line
-									# <a href="#" class="phone">$line </a>
-									echo "$line";
+									<a href="#" class="phone">$line </a>
+									#echo "$line";
 								}
 								fclose($file);
 							}
