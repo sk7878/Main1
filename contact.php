@@ -59,7 +59,16 @@
 
 						<div class="row">
 							<div class="col-md-8">
-								<div class="map"></div>
+								
+								<?php
+								if ($file = fopen("txt/contact_info.txt", "r")) {
+									while(!feof($file)) {
+										$line = fgets($file);
+										echo "$line";
+									}
+									fclose($file);
+								}
+								?>
 
 								<div class="contact-detail">
 									<address>
@@ -68,8 +77,20 @@
 										</div>
 										<p><strong>Sun Architects INC.</strong> <br>532 Avenue Street, San Jose</p>
 									</address>
-									<a href="#" class="phone"><span class="contact-icon"><img src="images/icon-phone.png" class="icon"></span> +1 800 931 033</a>
-									<a href="#" class="email"><span class="contact-icon"><img src="images/icon-envelope.png" class="icon"></span> contact@companyname.com</a>
+									<a href="#" class="phone"><span class="contact-icon"><img src="images/icon-phone.png" class="icon"></span> 
+									<?php
+									if ($file = fopen("txt/contact_info.txt", "r")) {
+										while(!feof($file)) {
+											$line = fgets($file);
+											echo "$line";
+											break;
+										}
+										fclose($file);
+									}
+									?>
+					
+									</a>
+									<a href="#" class="email"><span class="contact-icon"><img src="images/icon-envelope.png" class="icon"></span> contact@sunarchitects.com</a>
 								</div>
 							</div>
 							<div class="col-md-3 col-md-offset-1">
@@ -103,17 +124,20 @@
 							<p>532 Avenue Street, San Jose</p>
 						</address>
 
+						<a href="#" class="phone">
+
 						<?php
-							if ($file = fopen("contact_info.txt", "r")) {
-								while(!feof($file)) {
-									$line = fgets($file);
-									echo "$line";
-								}
-								fclose($file);
+						if ($file = fopen("txt/contact_info.txt", "r")) {
+							while(!feof($file)) {
+								$line = fgets($file);
+								echo "$line";
+								break;
 							}
+							fclose($file);
+						}
 						?>
 
-						<a href="#" class="phone">+ 1 800 931 033</a>
+						</a>
 					</div> <!-- .pull-left -->
 					<div class="pull-right">
 
