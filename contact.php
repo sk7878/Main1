@@ -44,6 +44,8 @@
 							<li class="menu-item"><a href="about.html">About</a></li>
 							<li class="menu-item"><a href="project.html">our Projects</a></li>
 							<li class="menu-item current-menu-item"><a href="contact.php">Contact</a></li>
+							<li class="menu-item"><a href="login.php">Login</a></li>
+
 						</ul> <!-- .menu -->
 					</div> <!-- .main-navigation -->
 
@@ -55,7 +57,7 @@
 				
 				<div class="page">
 					<div class="container">
-						<a href="#" class="button-back"><img src="images/arrow-back.png" alt="" class="icon">Back to the projects</a>
+						<a href="project.html" class="button-back"><img src="images/arrow-back.png" alt="" class="icon">Back to the projects</a>
 
 						<div class="row">
 							<div class="col-md-8">
@@ -65,6 +67,7 @@
 									while(!feof($file)) {
 										$line = fgets($file);
 										echo "$line";
+										echo "<br>";
 									}
 									fclose($file);
 								}
