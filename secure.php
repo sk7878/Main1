@@ -1,3 +1,11 @@
+<?php session_start();
+    ob_start();
+    if (!isset($_SESSION["user"])){
+        header("location:index.html");
+        die();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -59,7 +67,7 @@
 				<div class="page">
                     <div class="container">
 					
-                        Welcome Member! <br>
+                        Welcome,  <?php echo $_SESSION["user"]?>! <br>
 
                         Current users of the website : <br>
 
@@ -74,6 +82,8 @@
                                 fclose($file);
                             }
 						?>
+                         <br>
+                         <button type="submit" name="Logout" class="login loginmodal-submit" href="includes/logout.php" value="Logout">Logout</button>
 				
                     </div>
 				</div> <!-- .page -->
