@@ -57,9 +57,24 @@
 			<main class="main-content">
 				
 				<div class="page">
+                    <div class="container">
 					
-                Welcome Member!
+                        Welcome Member!
+
+                        Current users of the website :
+
+                        <?php
+                            if ($file = fopen("txt/users.txt", "r")) {
+                                while(!feof($file)) {
+                                    $line = fgets($file);
+                                    echo "$line";
+                                    echo "<br>";
+                                }
+                                fclose($file);
+                            }
+						?>
 				
+                    </div>
 				</div> <!-- .page -->
 
 			</main> <!-- .main-content -->

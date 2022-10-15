@@ -66,8 +66,8 @@
 									<p>Login with your credentials.</p>
 
 									<form action="main/loginvalidation.php" method="post">
-										<input type="text" placeholder="Username">
-										<input type="password" placeholder="Password">
+										<input type="text" name="Username" placeholder="Username">
+										<input type="password" name="Password" placeholder="Password">
 										<p class="text-right">
 											<button type="submit" name="Login" class="login loginmodal-submit" value="Login">Login</button>
 										</p>
