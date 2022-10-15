@@ -84,7 +84,7 @@
                             }
 						?>
                          <br>
-                         <button type="submit" name="Logout" class="login loginmodal-submit" href="main/logout.php" value="Logout">Logout</button>
+                         <a href="main/logout.php" class="btn btn-outline-secondary" role="button" aria-pressed="true">Logout</a>
 				
                     </div>
 				</div> <!-- .page -->
