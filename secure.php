@@ -59,15 +59,16 @@
 				<div class="page">
                     <div class="container">
 					
-                        Welcome Member!
+                        Welcome Member! <br>
 
-                        Current users of the website :
+                        Current users of the website : <br>
 
                         <?php
+                            $user_count = 0
                             if ($file = fopen("txt/users.txt", "r")) {
                                 while(!feof($file)) {
                                     $line = fgets($file);
-                                    echo "$line";
+                                    echo $user_count." : $line";
                                     echo "<br>";
                                 }
                                 fclose($file);
