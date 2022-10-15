@@ -72,18 +72,19 @@
                         Current users of the website : <br>
 
                         <?php
-                            $user_count = 0
+                            $user_count = 1;
                             if ($file = fopen("txt/users.txt", "r")) {
                                 while(!feof($file)) {
                                     $line = fgets($file);
                                     echo $user_count." : $line";
                                     echo "<br>";
+                                    $user_count = $user_count + 1;
                                 }
                                 fclose($file);
                             }
 						?>
                          <br>
-                         <button type="submit" name="Logout" class="login loginmodal-submit" href="includes/logout.php" value="Logout">Logout</button>
+                         <button type="submit" name="Logout" class="login loginmodal-submit" href="main/logout.php" value="Logout">Logout</button>
 				
                     </div>
 				</div> <!-- .page -->
