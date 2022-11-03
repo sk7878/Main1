@@ -50,7 +50,8 @@
 							<li class="menu-item"><a href="index.html">Home</a></li>
 							<li class="menu-item"><a href="news.html">News</a></li>
 							<li class="menu-item"><a href="about.html">About</a></li>
-							<li class="menu-item"><a href="project.html">our Projects</a></li>
+							<li class="menu-item"><a href="services.html">Services</a></li>
+							<li class="menu-item"><a href="project.html">Our Projects</a></li>
                             <li class="menu-item"><a href="contact.php">Contact</a></li>
                             <li class="menu-item"><a href="login.php">Login</a></li>
                             <li class="menu-item current-menu-item"><a href="secure.php">Member</a></li>

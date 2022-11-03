@@ -42,6 +42,7 @@
 							<li class="menu-item"><a href="index.html">Home</a></li>
 							<li class="menu-item"><a href="news.html">News</a></li>
 							<li class="menu-item"><a href="about.html">About</a></li>
+							<li class="menu-item"><a href="services.html">Services</a></li>
 							<li class="menu-item"><a href="project.html">our Projects</a></li>
                             <li class="menu-item"><a href="contact.php">Contact</a></li>
 							<li class="menu-item current-menu-item"><a href="login.html">Login</a></li>
@@ -73,6 +74,8 @@
 										</p>
 									</form>
 								</div>
+
+								<a href="dbconnect.php">Connect DB</a>
 								
 	
 								<a href="#" class="email"><span class="contact-icon"><img src="images/icon-envelope.png" class="icon"></span> contact@sunarchitects.com</a>
