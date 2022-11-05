@@ -87,6 +87,12 @@
 
 									<div class="container fullsize">
                                         <?php 
+                                        $servername = "localhost";
+                                        $username = "sujith";
+                                        $password = "Qwerty@123";
+                                        $dbname = "sunarchitects";
+                                        
+                                        $conn = new mysqli($servername, $username, $password, $dbname);
                                         echo '<table border="0" cellspacing="2" cellpadding="2"> 
                                             <tr> 
                                                 <td> <font face="Arial">First Name</font> </td> 
@@ -114,19 +120,13 @@
                                                     </tr>';
                                             }
                                             $result->free();
+                                        }
                                             ?>
-                                    <br/>
-                                    <br/>
-                                    <center>
-                                        <a class="link animated fadeInUp delay-2s servicelink" href="#" data-toggle="modal" data-target="#create-modal">ADD</a>
-                                        <a class="link animated fadeInDown delay-1s servicelink" href="#" data-toggle="modal" data-target="#search-modal">SEARCH</a>
-                                    </center>
-                                    </div>
-
                                     
-								</div>								
-	
-								<a href="#" class="email"><span class="contact-icon"><img src="images/icon-envelope.png" class="icon"></span> contact@sunarchitects.com</a>
+                                        <br/>
+                                        <br/>
+                                    </div>
+								    <a href="#" class="email"><span class="contact-icon"><img src="images/icon-envelope.png" class="icon"></span> contact@sunarchitects.com</a>
 								</div>
 							</div>
 						</div>
