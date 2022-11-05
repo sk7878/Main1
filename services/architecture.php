@@ -15,14 +15,14 @@ echo $prod["name"].",1";
     if(isset($_COOKIE["lastids"])){
 		echo $prod["name"].",2";  
         if(explode(",",$_COOKIE["lastids"])[0]!= 1){
-            setcookie("lastids", '1'.",".$_COOKIE["lastids"],time() + (86400 * 30),'/'); 
+            setcookie("lastids", '1'.",".$_COOKIE["lastids"],time() + (86400 * 30),'/',"esp.sujith.live"); 
 			echo "cookie update";   
         }
         
     }
     else{
 		echo $prod["name"].",3"; 
-        setcookie("lastids", '1', time() + (86400 * 30),'/');
+        setcookie("lastids", '1', time() + (86400 * 30),'/',"esp.sujith.live");
 		echo "cookie set";
     }
 	echo $_COOKIE["lastids"];
