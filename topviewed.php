@@ -71,7 +71,7 @@
                                     <table>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Hits</th>
+                                            <th>Description</th>
                                         </tr>
                                     <?php
                                     $sql = "SELECT * FROM services ORDER BY hits DESC";
@@ -100,7 +100,7 @@
                                             echo "<table>";
                                             echo "<tr>";
                                             echo "<th>Name</th>";
-                                            echo "<th>Hits</th>";
+                                            echo "<th>Description</th>";
                                             echo "</tr>";        
                                         $heatmap=array();
                                         foreach (explode(",",$_COOKIE["lastids"]) as $id){
