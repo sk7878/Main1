@@ -1,3 +1,5 @@
+<?php require "dbconnect.php"?>
+
 <div class="row">
 			<div class="col-lg-5 col-sm-4 wow fadeInLeft">
             	<h2>Global top viewed</h2>
