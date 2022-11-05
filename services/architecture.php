@@ -1,4 +1,26 @@
 <!DOCTYPE html>
+
+<?php require "includes/dbconnect.php"?>
+<?php
+    parse_str($_SERVER['QUERY_STRING']);
+    $result = $conn->query("SELECT * FROM services where id = 1;");
+    $prod = $result -> fetch_assoc();
+    $hits = $prod["hits"] + 1;
+    $conn->query("UPDATE products SET hits = ".$hits." WHERE id = 1;");    
+    $conn->close();
+?>
+<?php
+    if(isset($_COOKIE["lastids"])){
+        if(explode(",",$_COOKIE["lastids"])[0]!=$prod["id"]){
+            setcookie("lastids",$prod["id"].",".$_COOKIE["lastids"],time() + (86400 * 30));    
+        }
+        
+    }
+    else{
+        setcookie("lastids", $prod["id"], time() + (86400 * 30));
+    }
+?>
+
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
