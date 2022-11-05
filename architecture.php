@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php require "../dbconnect.php"?>
+<?php require "dbconnect.php"?>
 <?php
     parse_str($_SERVER['QUERY_STRING']);
     $result = $conn->query("SELECT * FROM services where id = 1;");
@@ -41,7 +41,7 @@ echo $prod["name"].",1";
 		<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 		<!-- Loading main css file -->
-		<link rel="stylesheet" href="../style.css">
+		<link rel="stylesheet" href="style.css">
 		
 		<!--[if lt IE 9]>
 		<script src="js/ie-support/html5.js"></script>
@@ -86,7 +86,7 @@ echo $prod["name"].",1";
 				
 				<div class="page">
 					<div class="container">
-						<a href="../services.html" class="button-back"><img src="../images/arrow-back.png" alt="" class="icon">Back to the services</a>
+						<a href="services.html" class="button-back"><img src="../images/arrow-back.png" alt="" class="icon">Back to the services</a>
 
 						<div class="row">
 							<div class="col-md-5">
