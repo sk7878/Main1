@@ -100,6 +100,7 @@
                                         }
                                         $result->free();
                                     } 
+									echo "</table>";
                                     ?>
 								</div>
 
@@ -166,6 +167,7 @@
                                             $result->free();
                                         } 
                                         }
+										echo "</table>";
                                     ?>
 
 								</div>
