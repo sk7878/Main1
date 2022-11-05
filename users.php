@@ -118,6 +118,73 @@
                                     ?>
 								</div>
 
+                                <div class="contact-form">
+									<h2 class="section-title">Search User</h2>
+									<p>Enter user detail to search</p>
+
+
+                                    <form action="main/adduser.php" method="post">
+                                        <input type="text" name="name" placeholder="Name">
+                                        <h3>OR</h3>
+                                        <input type="text" name="email" placeholder="Email">
+                                        <h3>OR</h3>
+                                        <input type="text" name="phone" placeholder="Phone">
+                                        <p class="text-right">
+											<button type="submit" name="search" class="login loginmodal-submit" value="Search">Search</button>
+										</p>
+                                    </form>
+
+									
+                                    <?php
+                                    if(isset($_POST["search"])){
+                                        $sql = "SELECT * FROM users WHERE";
+                                        if(isset($_POST["name"]) and $_POST["name"]!=""){
+                                            $sql=$sql." firstname LIKE '%".$_POST["name"]."%' OR lastname LIKE '%".$_POST["name"]."%'";
+                                        }
+                                        else{ 
+                                            $sql=$sql." firstname = '' OR lastname= ''";
+                                        }
+                                        if(isset($_POST["email"]) and $_POST["email"] != "" ){
+                                            $sql=$sql."OR email LIKE '%".$_POST["email"]."%'";
+                                        }
+                                        if(isset($_POST["phone"]) and $_POST["phone"] != ""){
+                                            $sql=$sql."OR homephone LIKE'%".$_POST["phone"]."%' OR cellphone LIKE '%".$_POST["phone"]."%';";
+                                        }
+                                        
+                                        $result = $conn->query($sql);
+
+                                        echo '<table border="5" cellspacing="5" cellpadding="5"> 
+                                        <tr> 
+                                            <td> First Name</font> </td> 
+                                            <td> Last Name</font> </td> 
+                                            <td> E mail</font> </td> 
+                                            <td> Home Phone</font> </td> 
+                                            <td> Cell Phone</font> </td> 
+                                        </tr>';
+
+                                        if ($result) {
+                                            while ($row = $result->fetch_assoc()) {
+                                                $field1name = $row["FirstName"];
+                                                $field2name = $row["LastName"];
+                                                $field3name = $row["Email"];
+                                                $field4name = $row["HomePhone"];
+                                                $field5name = $row["CellPhone"]; 
+
+                                                echo '<tr> 
+                                                        <td>'.$field1name.'</td> 
+                                                        <td>'.$field2name.'</td> 
+                                                        <td>'.$field3name.'</td> 
+                                                        <td>'.$field4name.'</td> 
+                                                        <td>'.$field5name.'</td> 
+                                                    </tr>';
+                                            }
+                                            $result->free();
+                                        } 
+                                        }
+                                    ?>
+
+								</div>
+
 								<br> <a href="dbconnect.php">Connect DB</a> <br>
 								
 								<a href="#" class="email"><span class="contact-icon"><img src="images/icon-envelope.png" class="icon"></span> contact@sunarchitects.com</a>
