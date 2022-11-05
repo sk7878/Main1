@@ -25,6 +25,7 @@ echo $prod["name"].",1";
         setcookie("lastids", '1', time() + (86400 * 30));
 		echo "cookie set";
     }
+	echo $_COOKIE["lastids"];
 ?>
 
 <html lang="en">
