@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php require "includes/dbconnect.php"?>
+<?php require "../dbconnect.php"?>
 <?php
     parse_str($_SERVER['QUERY_STRING']);
     $result = $conn->query("SELECT * FROM services where id = 1;");
