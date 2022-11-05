@@ -6,7 +6,8 @@
     $result = $conn->query("SELECT * FROM services where id = 1;");
     $prod = $result -> fetch_assoc();
     $hits = $prod["hits"] + 1;
-    $conn->query("UPDATE products SET hits = ".$hits." WHERE id = 1;");    
+    $conn->query("UPDATE products SET hits = ".$hits." WHERE id = 1;"); 
+	echo "$prod["name"]";   
     $conn->close();
 ?>
 <?php
