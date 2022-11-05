@@ -2,7 +2,7 @@
 
 <div class="row">
 			<div class="col-lg-5 col-sm-4 wow fadeInLeft">
-            	<h2>Global top viewed</h2>
+            	<h2>Globally top viewed services</h2>
                 <table>
                     <tr>
                         <th>Name</th>

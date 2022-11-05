@@ -1,4 +1,26 @@
 <!DOCTYPE html>
+
+<?php require "dbconnect.php"?>
+<?php
+    parse_str($_SERVER['QUERY_STRING']);
+    $result = $conn->query("SELECT * FROM services where id = 5;");
+    $prod = $result -> fetch_assoc();
+    $hits = $prod["hits"] + 1;
+    $conn->query("UPDATE services SET hits = ".$hits." WHERE id = 5;"); 
+    $conn->close();
+?>
+<?php
+    if(isset($_COOKIE["lastids"])){
+        if(explode(",",$_COOKIE["lastids"])[0]!= 5){
+            setcookie("lastids", '5'.",".$_COOKIE["lastids"],time() + (86400 * 30),'/',"esp.sujith.live"); 
+        }
+        
+    }
+    else{
+        setcookie("lastids", '5', time() + (86400 * 30),'/',"esp.sujith.live");
+    }
+?>
+
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
@@ -12,7 +34,7 @@
 		<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 		<!-- Loading main css file -->
-		<link rel="stylesheet" href="../style.css">
+		<link rel="stylesheet" href="style.css">
 		
 		<!--[if lt IE 9]>
 		<script src="js/ie-support/html5.js"></script>
@@ -57,24 +79,24 @@
 				
 				<div class="page">
 					<div class="container">
-						<a href="../services.html" class="button-back"><img src="../images/arrow-back.png" alt="" class="icon">Back to the services</a>
+						<a href="services.html" class="button-back"><img src="../images/arrow-back.png" alt="" class="icon">Back to the services</a>
 
 						<div class="row">
 							<div class="col-md-5">
 								<div class="project-images">
-									<img src="../images/pm1.jpg" alt="">
+									<img src="../images/bid1.jpg" alt="">
 
 									<div class="thumbs">
-										<a href="#"><img src="../images/pm2.jpg" alt="#"></a>
-										<a href="#"><img src="../images/pm3.jpg" alt="#"></a>
-										<a href="#"><img src="../images/pm4.jpg" alt="#"></a>
+										<a href="#"><img src="../images/bid2.jpg" alt="#"></a>
+										<a href="#"><img src="../images/bid2.jpg" alt="#"></a>
+										<a href="#"><img src="../images/bid4.jpg" alt="#"></a>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-7">
 								<div class="project-detail">
-									<h2 class="project-title">Project Management/ QA & QC</h2>
-									<p>The way to organizes and manages quality and quantity resources that are necessary to complete a project.</p>
+									<h2 class="project-title">Procurement & Bid management</h2>
+									<p>Ensuring the seamless running of the bid for a project within the stipulated time and financial parameters</p>
 
 									<p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel.</p>
 								</div>

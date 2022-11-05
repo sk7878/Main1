@@ -1,4 +1,26 @@
 <!DOCTYPE html>
+
+<?php require "dbconnect.php"?>
+<?php
+    parse_str($_SERVER['QUERY_STRING']);
+    $result = $conn->query("SELECT * FROM services where id = 7;");
+    $prod = $result -> fetch_assoc();
+    $hits = $prod["hits"] + 1;
+    $conn->query("UPDATE services SET hits = ".$hits." WHERE id = 7;"); 
+    $conn->close();
+?>
+<?php
+    if(isset($_COOKIE["lastids"])){
+        if(explode(",",$_COOKIE["lastids"])[0]!= 7){
+            setcookie("lastids", '7'.",".$_COOKIE["lastids"],time() + (86400 * 30),'/',"esp.sujith.live"); 
+        }
+        
+    }
+    else{
+        setcookie("lastids", '7', time() + (86400 * 30),'/',"esp.sujith.live");
+    }
+?>
+
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
@@ -12,7 +34,7 @@
 		<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 		<!-- Loading main css file -->
-		<link rel="stylesheet" href="../style.css">
+		<link rel="stylesheet" href="style.css">
 		
 		<!--[if lt IE 9]>
 		<script src="js/ie-support/html5.js"></script>
@@ -57,7 +79,7 @@
 				
 				<div class="page">
 					<div class="container">
-						<a href="../services.html" class="button-back"><img src="../images/arrow-back.png" alt="" class="icon">Back to the services</a>
+						<a href="services.html" class="button-back"><img src="../images/arrow-back.png" alt="" class="icon">Back to the services</a>
 
 						<div class="row">
 							<div class="col-md-5">
