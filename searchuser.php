@@ -66,7 +66,7 @@
 
                                 <div class="contact-form">
 									<h2 class="section-title">User List</h2>
-									<p>Existing users</p>
+									<p>List of existing users</p>
 
                                     <?php require "dbconnect.php"?>
 
@@ -104,6 +104,9 @@
                                     ?>
 								</div>
 
+								<br>
+								<br>
+								<br>
                                 <div class="contact-form">
 									<h2 class="section-title">Search User</h2>
 									<p>Enter user detail to search</p>
