@@ -74,10 +74,11 @@
 										</p>
 									</form>
 								</div>
-
-								<a href="dbconnect.php">Connect DB</a>
 								
 	
+								<br>
+								<br>
+								<br>
 								<a href="#" class="email"><span class="contact-icon"><img src="images/icon-envelope.png" class="icon"></span> contact@sunarchitects.com</a>
 								</div>
 							</div>
