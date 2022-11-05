@@ -83,18 +83,18 @@
 									<h2 class="section-title">User List</h2>
 									<p>Existing users</p>
 
-                                    <?php require "../dbconnect.php"?>
+                                    <?php require "dbconnect.php"?>
 
 									<?php 
                                     $query = "SELECT * FROM users";
 
-                                    echo '<table border="0" cellspacing="2" cellpadding="2"> 
+                                    echo '<table border="5" cellspacing="5" cellpadding="5"> 
                                         <tr> 
-                                            <td> <font face="Arial">First Name</font> </td> 
-                                            <td> <font face="Arial">Last Name</font> </td> 
-                                            <td> <font face="Arial">E mail</font> </td> 
-                                            <td> <font face="Arial">Home Phone</font> </td> 
-                                            <td> <font face="Arial">Cell Phone</font> </td> 
+                                            <td> First Name</font> </td> 
+                                            <td> Last Name</font> </td> 
+                                            <td> E mail</font> </td> 
+                                            <td> Home Phone</font> </td> 
+                                            <td> Cell Phone</font> </td> 
                                         </tr>';
 
                                     if ($result = $conn->query($query)) {
