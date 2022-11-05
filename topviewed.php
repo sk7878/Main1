@@ -1,3 +1,27 @@
+<div class="row">
+			<div class="col-lg-5 col-sm-4 wow fadeInLeft">
+            	<h2>Global top viewed</h2>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Hits</th>
+                    </tr>
+                <?php
+                $sql = "SELECT * FROM services ORDER BY hits DESC";
+                $results = $conn->query($sql);
+                for($i=0; $i<5; $i++){
+                    $row = $results->fetch_assoc();
+                    echo "<tr>";
+                    echo "<td>".$row["name"]."</td>";
+                    echo "<td>".$row["description"]."</td>";
+                    echo "</tr>";
+                }
+                
+                ?>
+                </table>
+                
+            </div>
+
 
 <h2>Your Last 5 viewed</h2>
 
