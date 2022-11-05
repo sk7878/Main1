@@ -2,18 +2,14 @@
 
 <?php require "dbconnect.php"?>
 <?php
-    parse_str($_SERVER['QUERY_STRING']);
     $result = $conn->query("SELECT * FROM services where id = 1;");
     $prod = $result -> fetch_assoc();
     $hits = $prod["hits"] + 1;
     $conn->query("UPDATE services SET hits = ".$hits." WHERE id = 1;"); 
-	echo $prod["name"];   
     $conn->close();
 ?>
 <?php
-echo $prod["name"].",1";  
     if(isset($_COOKIE["lastids"])){
-		echo $prod["name"].",2";  
         if(explode(",",$_COOKIE["lastids"])[0]!= 1){
             setcookie("lastids", '1'.",".$_COOKIE["lastids"],time() + (86400 * 30),'/',"esp.sujith.live"); 
 			echo "cookie update";   
@@ -21,11 +17,8 @@ echo $prod["name"].",1";
         
     }
     else{
-		echo $prod["name"].",3"; 
         setcookie("lastids", '1', time() + (86400 * 30),'/',"esp.sujith.live");
-		echo "cookie set";
     }
-	echo $_COOKIE["lastids"];
 ?>
 
 <html lang="en">
