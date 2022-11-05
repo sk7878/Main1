@@ -46,6 +46,8 @@
 							<li class="menu-item"><a href="project.html">our Projects</a></li>
                             <li class="menu-item"><a href="contact.php">Contact</a></li>
 							<li class="menu-item current-menu-item"><a href="login.html">Login</a></li>
+							<li class="menu-item"><a href="users.php">Users</a></li>
+							
 						</ul> <!-- .menu -->
 					</div> <!-- .main-navigation -->
 
