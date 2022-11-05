@@ -79,13 +79,12 @@
 									</form>
 								</div>
 
-                                <div class="contact-form">
+                                <div class="container">
 									<h2 class="section-title">User List</h2>
 									<p>Existing users</p>
 
-                                    <?php require "../dbconnect.php"?>
+                                    <?php require "../dbconnect.php"
 
-									<?php 
                                     $query = "SELECT * FROM users";
 
                                     echo '<table border="0" cellspacing="2" cellpadding="2"> 
@@ -118,10 +117,8 @@
                                     ?>
 								</div>
 
-								<br> <a href="dbconnect.php">Connect DB</a> <br>
 								
 								<a href="#" class="email"><span class="contact-icon"><img src="images/icon-envelope.png" class="icon"></span> contact@sunarchitects.com</a>
-								</div>
 							</div>
 						</div>
 					</div>
