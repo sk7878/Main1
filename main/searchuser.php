@@ -108,7 +108,7 @@
 									<p>Enter user detail to search</p>
 
 
-                                    <form action="main/searchuser.php" method="post">
+                                    <form action="searchuser.php" method="post">
                                         <input type="text" name="name" placeholder="Name">
                                         <h3>OR</h3>
                                         <input type="text" name="email" placeholder="Email">

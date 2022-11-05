@@ -79,9 +79,8 @@
 									</form>
 								</div>
 
-								<br> <a href="searchuser.php">VIEW USERS / SEARCH USER</a> <br>
+								<br> <a href="main/searchuser.php"> VIEW USERS / SEARCH USER</a> <br>
 								
-								<a href="#" class="email"><span class="contact-icon"><img src="images/icon-envelope.png" class="icon"></span> contact@sunarchitects.com</a>
 							</div>
 						</div>
 					</div>
