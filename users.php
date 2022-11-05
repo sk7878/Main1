@@ -86,41 +86,7 @@
 									<p></p>
 
 									<div class="container fullsize">
-                                        <table align = center>
-                                            <tr>
-                                                
-                                                    <td class="tableheader"><strong>First Name</strong></td>
-                                                    <td class="tableheader"><strong>Last Name</strong></td>
-                                                    <td class="tableheader"><strong>Email</strong></td>
-                                                    <td class="tableheader"><strong>Home Phone</strong></td>
-                                                    <td class="tableheader"><strong>Cell Phone</strong></td>
-                                                    
-                                            </tr>
-                                                <?php                        
-                                                    $sql = "SELECT * FROM users";
-                                                    $result = $conn->query($sql);
-                                                    while($row = $result -> fetch_assoc()){
-                                                        echo "<tr>";
-                                                            echo "<td>";
-                                                                echo $row["firstname"];
-                                                            echo "</td>";
-                                                            echo "<td>";
-                                                                echo $row["lastname"];
-                                                            echo "</td>";
-                                                            echo "<td>";
-                                                                echo $row["email"];
-                                                            echo "</td>";
-                                                            echo "<td>";
-                                                                echo $row["homephone"];
-                                                            echo "</td>";
-                                                            echo "<td>";
-                                                                echo $row["cellphone"];
-                                                            echo "</td>";
-                                                        echo "</tr>";
-                                                    }
-                                                ?>
-                                        </table>
-
+                                        <?php 
                                         echo '<table border="0" cellspacing="2" cellpadding="2"> 
                                             <tr> 
                                                 <td> <font face="Arial">First Name</font> </td> 
@@ -130,7 +96,8 @@
                                                 <td> <font face="Arial">Cell Phone</font> </td> 
                                             </tr>';
 
-                                        if ($result = $mysqli->query($query)) {
+                                        $sql = "SELECT * FROM users";
+                                        if ($result = $mysqli->query($sql)) {
                                             while ($row = $result->fetch_assoc()) {
                                                 $field1name = $row["FirstName"];
                                                 $field2name = $row["LastName"];
@@ -147,6 +114,7 @@
                                                     </tr>';
                                             }
                                             $result->free();
+                                            ?>
                                     <br/>
                                     <br/>
                                     <center>
