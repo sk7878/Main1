@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 		
-		<title>Sun Architects | Users</title>
+		<title>Sun Architects | Login</title>
 
 		<!-- Loading third party fonts -->
 		<link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|" rel="stylesheet" type="text/css">
@@ -23,7 +23,7 @@
 
 
 	<body>
-        <?php require "dbconnect.php" ?>
+		
 		<div id="site-content">
 			<div class="site-header">
 				<div class="container">
@@ -43,10 +43,10 @@
 							<li class="menu-item"><a href="news.html">News</a></li>
 							<li class="menu-item"><a href="about.html">About</a></li>
 							<li class="menu-item"><a href="services.html">Services</a></li>
-							<li class="menu-item"><a href="project.html">our Projects</a></li>
+							<li class="menu-item"><a href="project.html">Our Projects</a></li>
                             <li class="menu-item"><a href="contact.php">Contact</a></li>
                             <li class="menu-item"><a href="login.php">Login</a></li>
-                            <li class="menu-item current-menu-item"><a href="users.php">Users</a></li>
+							<li class="menu-item current-menu-item"><a href="users.php">Users</a></li>
 						</ul> <!-- .menu -->
 					</div> <!-- .main-navigation -->
 
@@ -64,11 +64,8 @@
 							<div class="col-md-8">
 
                                 <div class="contact-form">
-									<h2 class="section-title">Users</h2>
-									<p>Enter your details</p>
-
-									<h2 class="section-title">Add Account</h2>
-									<p>Enter your details.</p>
+									<h2 class="section-title">Add account</h2>
+									<p>Provide your details.</p>
 
 									<form action="main/adduser.php" method="post">
                                         <input type="text" name="firstname" placeholder="First Name">
@@ -80,15 +77,15 @@
 											<button type="submit" name="add" class="login loginmodal-submit" value="Add">Add</button>
 										</p>
 									</form>
-                                    <br>
-                                </div>
+								</div>
 
-                                <div class="container">
+                                <div class="contact-form">
+									<h2 class="section-title">User List</h2>
+									<p>Existing users</p>
 
-                                    <h2 class="section-title">Users List</h2>
-									<p>List of existing users</p>
+                                    <?php require "../dbconnect.php"?>
 
-                                    <?php 
+									<?php 
                                     $query = "SELECT * FROM users";
 
                                     echo '<table border="0" cellspacing="2" cellpadding="2"> 
@@ -100,7 +97,7 @@
                                             <td> <font face="Arial">Cell Phone</font> </td> 
                                         </tr>';
 
-                                    if ($result = $mysqli->query($query)) {
+                                    if ($result = $conn->query($query)) {
                                         while ($row = $result->fetch_assoc()) {
                                             $field1name = $row["FirstName"];
                                             $field2name = $row["LastName"];
@@ -119,12 +116,12 @@
                                         $result->free();
                                     } 
                                     ?>
-                                
-                                    <br/>
-                                    <br/>
-                                
-								    <a href="#" class="email"><span class="contact-icon"><img src="images/icon-envelope.png" class="icon"></span> contact@sunarchitects.com</a>
-                                </div>
+								</div>
+
+								<br> <a href="dbconnect.php">Connect DB</a> <br>
+								
+								<a href="#" class="email"><span class="contact-icon"><img src="images/icon-envelope.png" class="icon"></span> contact@sunarchitects.com</a>
+								</div>
 							</div>
 						</div>
 					</div>
