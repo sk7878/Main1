@@ -81,53 +81,50 @@
 										</p>
 									</form>
                                     <br>
+                                </div>
+
+                                <div class="container">
 
                                     <h2 class="section-title">Users List</h2>
-									<p></p>
+									<p>List of existing users</p>
 
-									<div class="container fullsize">
-                                        <?php 
-                                        $servername = "localhost";
-                                        $username = "sujith";
-                                        $password = "Qwerty@123";
-                                        $dbname = "sunarchitects";
-                                        
-                                        $conn = new mysqli($servername, $username, $password, $dbname);
-                                        echo '<table border="0" cellspacing="2" cellpadding="2"> 
-                                            <tr> 
-                                                <td> <font face="Arial">First Name</font> </td> 
-                                                <td> <font face="Arial">Last Name</font> </td> 
-                                                <td> <font face="Arial">E mail</font> </td> 
-                                                <td> <font face="Arial">Home Phone</font> </td> 
-                                                <td> <font face="Arial">Cell Phone</font> </td> 
-                                            </tr>';
+                                    <?php 
+                                    $query = "SELECT * FROM users";
 
-                                        $sql = "SELECT * FROM users";
-                                        if ($result = $mysqli->query($sql)) {
-                                            while ($row = $result->fetch_assoc()) {
-                                                $field1name = $row["FirstName"];
-                                                $field2name = $row["LastName"];
-                                                $field3name = $row["Email"];
-                                                $field4name = $row["HomePhone"];
-                                                $field5name = $row["CellPhone"]; 
+                                    echo '<table border="0" cellspacing="2" cellpadding="2"> 
+                                        <tr> 
+                                            <td> <font face="Arial">First Name</font> </td> 
+                                            <td> <font face="Arial">Last Name</font> </td> 
+                                            <td> <font face="Arial">E mail</font> </td> 
+                                            <td> <font face="Arial">Home Phone</font> </td> 
+                                            <td> <font face="Arial">Cell Phone</font> </td> 
+                                        </tr>';
 
-                                                echo '<tr> 
-                                                        <td>'.$field1name.'</td> 
-                                                        <td>'.$field2name.'</td> 
-                                                        <td>'.$field3name.'</td> 
-                                                        <td>'.$field4name.'</td> 
-                                                        <td>'.$field5name.'</td> 
-                                                    </tr>';
-                                            }
-                                            $result->free();
+                                    if ($result = $mysqli->query($query)) {
+                                        while ($row = $result->fetch_assoc()) {
+                                            $field1name = $row["FirstName"];
+                                            $field2name = $row["LastName"];
+                                            $field3name = $row["Email"];
+                                            $field4name = $row["HomePhone"];
+                                            $field5name = $row["CellPhone"]; 
+
+                                            echo '<tr> 
+                                                    <td>'.$field1name.'</td> 
+                                                    <td>'.$field2name.'</td> 
+                                                    <td>'.$field3name.'</td> 
+                                                    <td>'.$field4name.'</td> 
+                                                    <td>'.$field5name.'</td> 
+                                                </tr>';
                                         }
-                                            ?>
-                                    
-                                        <br/>
-                                        <br/>
-                                    </div>
+                                        $result->free();
+                                    } 
+                                    ?>
+                                
+                                    <br/>
+                                    <br/>
+                                
 								    <a href="#" class="email"><span class="contact-icon"><img src="images/icon-envelope.png" class="icon"></span> contact@sunarchitects.com</a>
-								</div>
+                                </div>
 							</div>
 						</div>
 					</div>
