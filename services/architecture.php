@@ -13,12 +13,14 @@
 <?php
     if(isset($_COOKIE["lastids"])){
         if(explode(",",$_COOKIE["lastids"])[0]!=$prod["id"]){
-            setcookie("lastids",$prod["id"].",".$_COOKIE["lastids"],time() + (86400 * 30));    
+            setcookie("lastids", 1.",".$_COOKIE["lastids"],time() + (86400 * 30)); 
+			echo "cookie update";   
         }
         
     }
     else{
-        setcookie("lastids", $prod["id"], time() + (86400 * 30));
+        setcookie("lastids", 1, time() + (86400 * 30));
+		echo "cookie set";
     }
 ?>
 
