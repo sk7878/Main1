@@ -66,7 +66,7 @@
 							<div class="col-md-8">
 
                             <div class="row">
-                                <div class="col-lg-5 col-sm-4 wow fadeInLeft">
+                                <div class="container">
                                     <h2>Globally top viewed services</h2>
                                     <table>
                                         <tr>
@@ -93,7 +93,7 @@
 								<br>
 								<br>
 
-                                <div class="col-lg-7 col-sm-8 wow fadeInRight">
+                                <div class="container">
                                     <h2>Your top viewed</h2>
                                     <?php
                                         if(isset($_COOKIE["lastids"])){
@@ -142,7 +142,7 @@
 								<br>
 								<br>
 
-                                <div class="col-lg-7 col-sm-8 wow fadeInRight">
+                                <div class="container">
                                     <h2>Your Last 5 viewed</h2>
 
                                                 
