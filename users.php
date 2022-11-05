@@ -79,7 +79,7 @@
 									</form>
 								</div>
 
-								<br> <a href="main/searchuser.php"> VIEW USERS / SEARCH USER</a> <br>
+								<br> <a href="searchuser.php"> VIEW USERS / SEARCH USER</a> <br>
 								
 							</div>
 						</div>
